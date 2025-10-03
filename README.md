@@ -12,9 +12,13 @@ crypto_hunter -m address -f tests/71.txt -t 24 -l compress -6 -S -e -r 400000000
 
 crypto_hunter -m bsgs -t 24 -f tests/135.txt -k 4096 -6 -S -e 4000000000000000000000000000000000:7fffffffffffffffffffffffffffffffff
 
+🐧 Linux – Exemplos de uso
+
 ./crypto_hunter -m address -f tests/71.txt -t 24 -l compress -6 -S -e -r 400000000000000000:7fffffffffffffffff -n 1024
 
 ./crypto_hunter -m bsgs -t 24 -f tests/135.txt -k 4096 -6 -S -e 4000000000000000000000000000000000:7fffffffffffffffffffffffffffffffff
+
+🧠 Parâmetros recomendados para o modo BSGS de acordo com sua RAM
 
 | RAM    | Parâmetros recomendados        |
 | ------ | ------------------------------ |
