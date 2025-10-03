@@ -14,11 +14,11 @@ endereços
 TL:DR
 Baixar e compilar
 Executar contra o puzzle 66 (modo endereço)
-crypto_hunter -m address -f tests/66.txt -b 66 -l compress -R -q -s 10
+./crypto_hunter -m address -f tests/66.txt -b 66 -l compress -R -q -s 10
 Você precisa adicionar -t numberThreads para obter uma melhor velocidade
 
 Executar contra o Puzzle 125 (modo bsgs)
-crypto_hunter -m bsgs -f tests/125.txt -b 125 -q -s 10 -R
+./crypto_hunter -m bsgs -f tests/125.txt -b 125 -q -s 10 -R
 Você precisa adicionar -t numberThreads e -k factor para obter uma melhor velocidade
 
 Código Livre
@@ -54,7 +54,7 @@ apt install libssl-dev -y
 apt install libgmp-dev -y
 Para clonar o repositório:
 
-git clone https://github.com/lmajowka/crypto_hunter.git
+git clone https://github.com/foxlife281/crypto_hunter-windows-e-linux..git
 não se esqueça de mudar para o diretório crypto_hunter (Mas eu não estou aqui para ensinar comandos Linux)
 
 cd crypto_hunter
@@ -92,7 +92,7 @@ Exemplo de endereços de puzzles resolvidos, este arquivo já está no repositó
 ...
 Para direcionar esse arquivo, precisamos executar o crypto_hunter com esta linha
 
-crypto_hunter -m address -f tests/1to32.txt -r 1:FFFFFFFF
+./crypto_hunter -m address -f tests/1to32.txt -r 1:FFFFFFFF
 
 saída:
 
@@ -127,7 +127,7 @@ Neste modo, você pode especificar para buscar apenas endereços comprimidos ou 
 
 Tente sua sorte com o parâmetro aleatório -R contra o puzzle #66
 
-crypto_hunter -m address -f tests/66.txt -b 66 -l compress -R -q -s 10
+./crypto_hunter -m address -f tests/66.txt -b 66 -l compress -R -q -s 10
 Observe a mudança de -r 1:FFFFFFFF para -b 66, com -b você pode especificar o intervalo de bits.
 
 saída:
@@ -153,7 +153,7 @@ Para buscar apenas um endereço de vanity como 1Good1 ou 1MyKey, use o seguinte 
 
 comando completo
 
-crypto_hunter -m vanity -l compress -R -b 256 -v 1Good1 -v 1MyKey
+./crypto_hunter -m vanity -l compress -R -b 256 -v 1Good1 -v 1MyKey
 saída:
 
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -177,7 +177,7 @@ Address 1Good1mjxXjNqb8TucvKjyCuZfihMZgFcc
 rmd160 ad63f02cb68254ce12982e5e312bd51e8a239a84
 comando para buscar múltiplos endereços de vanity a partir de um arquivo -f filename.txt.
 
-crypto_hunter -m vanity -f ~/main/keyhunt/vanitytargets.txt -l compress -R -b 256 -e -s 10 -q 
+./crypto_hunter -m vanity -f ~/main/keyhunt/vanitytargets.txt -l compress -R -b 256 -e -s 10 -q 
 Saída:
 
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -210,7 +210,7 @@ exemplo de arquivo tests/1to32.rmd:
 ...
 para direcionar esse arquivo você precisa executar a próxima linha:
 
-crypto_hunter -m rmd160 -f tests/1to32.rmd -r 1:FFFFFFFF -l compress -s 5
+./crypto_hunter -m rmd160 -f tests/1to32.rmd -r 1:FFFFFFFF -l compress -s 5
 saída:
 
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -237,7 +237,7 @@ rmd160 7dd65592d0ab2fe0d0257d571abf032cd9db93dc
 (Output omitted)
 tente sua sorte com o próximo arquivo para o puzzle #66
 
-crypto_hunter -m rmd160 -f tests/66.rmd -b 66 -l compress -R -q
+./crypto_hunter -m rmd160 -f tests/66.rmd -b 66 -l compress -R -q
 Saída:
 
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -279,7 +279,7 @@ Alguns valores subtraídos do puzzle 40
 03a2efa402fd5268400c77c20e574ba86409ededee7c4020e4b9f0edbee53de0d4 # target
 Agora você pode usar crypto_hunter contra alguns milhares de valores do puzzle 40:
 
-crypto_hunter -m xpoint -f tests/substracted40.txt -n 65536 -t 4 -b 40
+./crypto_hunter -m xpoint -f tests/substracted40.txt -n 65536 -t 4 -b 40
 
 Saída:
 
@@ -310,7 +310,7 @@ Este é um exemplo fácil, eu tentei o puzzle 120 com mais de 500 milhões de ch
 
 Teste sua sorte com o puzzle 120 com xpoint:
 
-crypto_hunter -m xpoint -f tests/120.txt -t 4 -b 125 -R -q
+./crypto_hunter -m xpoint -f tests/120.txt -t 4 -b 125 -R -q
 
 Saída:
 
@@ -426,7 +426,7 @@ c6927a00970d0165327d0a6db7950f05720c295c
 c01bf430a97cbcdaedddba87ef4ea21c456cebdb
 Para direcionar esse arquivo, você precisa fazer:
 
-crypto_hunter -m pub2rmd -f tests/puzzleswopublickey.txt -t 6 -q
+./crypto_hunter -m pub2rmd -f tests/puzzleswopublickey.txt -t 6 -q
 
 Saída:
 
@@ -469,7 +469,7 @@ Os arquivos são criados se não existirem quando você executar o programa pela
 
 exemplo de criação de arquivo:
 
-crypto_hunter -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
+./crypto_hunter -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Random mode
 [+] Quiet thread output
@@ -495,7 +495,7 @@ crypto_hunter -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
 ^C] Total 457396837154816 keys in 30 seconds: ~15 Tkeys/s (15246561238493 keys/s)
 Quando executamos o programa pela segunda vez, os arquivos agora são lidos e o processamento dos pontos bP é omitido:
 
-crypto_hunter -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
+./crypto_hunter -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Random mode
 [+] Quiet thread output
@@ -521,10 +521,10 @@ Todos os próximos exemplos foram feitos com a opção -S. Eu apenas omito essa 
 Exemplos
 Para tentar encontrar essas chaves privadas, esta é a linha de execução:
 
-time crypto_hunter -m bsgs -f tests/test120.txt -b 120 -S
+time ./crypto_hunter -m bsgs -f tests/test120.txt -b 120 -S
 Saída:
 
-time crypto_hunter -m bsgs -f tests/test120.txt -b 120 -S
+time ./crypto_hunter -m bsgs -f tests/test120.txt -b 120 -S
 [+] Version 0
 
 .2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -557,9 +557,9 @@ Teste o puzzle 120 com a próxima chave pública:
 0233709eb11e0d4439a729f21c2c443dedb727528229713f0065721ba8fa46f00e
 Linha de execução em modo aleatório -R ou -B random
 
-crypto_hunter -m bsgs -f tests/125.txt -b 125 -q -s 10 -R
+./crypto_hunter -m bsgs -f tests/125.txt -b 125 -q -s 10 -R
 
-crypto_hunter -m bsgs -f tests/125.txt -b 125 -q -s 10 -B random
+./crypto_hunter -m bsgs -f tests/125.txt -b 125 -q -s 10 -B random
 
 Exemplo de Saída:
 
@@ -590,10 +590,10 @@ Podemos acelerar nosso processo selecionando um valor K maior -k valor, btw o va
 
 Exemplo:
 
-crypto_hunter -m bsgs -f tests/125.txt -b 125 -R -k 20 -S
+./crypto_hunter -m bsgs -f tests/125.txt -b 125 -R -k 20 -S
 Saída:
 
-crypto_hunter -m bsgs -f tests/125.txt -b 125 -R -k 20 -S
+./crypto_hunter -m bsgs -f tests/125.txt -b 125 -R -k 20 -S
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Random mode
 [+] K factor 20
@@ -622,7 +622,7 @@ Observe o valor de N 0xfffff000000 com k = 20, isso significa que o valor N é m
 
 se você quiser mais velocidade, use um valor k maior, como 128, isso usará cerca de 2 GB de RAM.
 
-crypto_hunter -m bsgs -f tests/125.txt -b 125 -R -k 128 -S
+./crypto_hunter -m bsgs -f tests/125.txt -b 125 -R -k 128 -S
 Saída:
 
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -652,7 +652,7 @@ Eu já testei com cerca de 8 GB usados com -k 512 e obtive ~46 Petakeys/s por th
 
 com 8 threads
 
-crypto_hunter -m bsgs -f tests/125.txt -b 125 -R -k 512 -q -t 8 -s 10 -S
+./crypto_hunter -m bsgs -f tests/125.txt -b 125 -R -k 512 -q -t 8 -s 10 -S
 
 Saída:
 
@@ -718,7 +718,7 @@ Ocultando a velocidade:
 -s 0
 comando:
 
-time crypto_hunter -m bsgs -t 6 -f tests/in.txt -r 49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5e0000000000000000:49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5effffffffffffffff -n 0x1000000000000000 -M -s 0
+time ./crypto_hunter -m bsgs -t 6 -f tests/in.txt -r 49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5e0000000000000000:49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5effffffffffffffff -n 0x1000000000000000 -M -s 0
 Saída:
 
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -871,7 +871,7 @@ Chave pública:
 0365ec2994b8cc0a20d40dd69edfe55ca32a54bcbbaa6b0ddcff36049301a54579
 Comando
 
-time crypto_hunter -m bsgs -t 8 -f tests/63.pub -k 512 -s 0 -S -b 63
+time ./crypto_hunter -m bsgs -t 8 -f tests/63.pub -k 512 -s 0 -S -b 63
 saída:
 
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -922,7 +922,7 @@ Com 10 Exakeys/s, a chave pública será encontrada em 2 minutos: Chave privada:
 
 Selecione uma chave pública que se ajuste à sua velocidade atual, salve-a em um arquivo testpublickey.txt e teste com:
 
-crypto_hunter -m bsgs -f testpublickey.txt -b 120 -q
+./crypto_hunter -m bsgs -f testpublickey.txt -b 120 -q
 Altere os valores de k, n e t.
 
 As chaves públicas devem ser encontradas em cerca de 2 minutos após o carregamento dos arquivos.
@@ -940,7 +940,7 @@ O arquivo de entrada pode ser uma lista de endereços ou hashes rmd das chaves d
 
 Exemplo de comando:
 
-crypto_hunter -m minikeys -f tests/minikeys.txt -C SG64GZqySYwBm9KxE1wJ28 -n 0x10000
+./crypto_hunter -m minikeys -f tests/minikeys.txt -C SG64GZqySYwBm9KxE1wJ28 -n 0x10000
 Saída:
 
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -959,7 +959,7 @@ address: 15azScMmHvFPAQfQafrKr48E9MqRRXSnVv
 ^C
 comando minikeys aleatório
 
-crypto_hunter -m minikeys -f tests/minikeys.txt -n 0x10000 -q -R
+./crypto_hunter -m minikeys -f tests/minikeys.txt -n 0x10000 -q -R
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Mode minikeys
 [+] Quiet thread output
@@ -980,7 +980,7 @@ para testar a funcionalidade do ethereum, você pode usar o arquivo de amostra t
 
 comando:
 
-crypto_hunter -c eth -f tests/1to32.eth -r 1:100000000 -M
+./crypto_hunter -c eth -f tests/1to32.eth -r 1:100000000 -M
 saída:
 
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
@@ -1058,7 +1058,9 @@ NetSec
 Jean Luc Pons
 Todo o grupo de CryptoHunters que tornou este programa possível
 Todos os usuários que testaram, relataram bugs, solicitaram melhorias e compartilharam seus conhecimentos.
-Doações
+
+Doações:
+
 BTC: bc1qzexphrpjea9qks3wgmqe0d698hnhsxqs8mazxk
 
 Obrigado.
