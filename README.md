@@ -6,6 +6,7 @@ crypto_hunter -m address -f tests/71.txt -t 24 -l compress -6 -S -e -r 400000000
 
 crypto_hunter -m bsgs -t 24 -f tests/135.txt -k 4096 -6 -S -e 4000000000000000000000000000000000:7fffffffffffffffffffffffffffffffff
 
+
 linux
 
 ./crypto_hunter -m address -f tests/71.txt -t 24 -l compress -6 -S -e -r 400000000000000000:7fffffffffffffffff -n 1024
