@@ -1,14 +1,19 @@
 crypto_hunter-windows-e-linux.
 
-crypto_hunter -m address -f tests/71.txt -t 24 -l compress -6 -S -e -r 400000000000000000:7fffffffffffffffff -n 1024  - windows
+windows
 
-./crypto_hunter -m address -f tests/71.txt -t 24 -l compress -6 -S -e -r 400000000000000000:7fffffffffffffffff -n 1024  - linux
+crypto_hunter -m address -f tests/71.txt -t 24 -l compress -6 -S -e -r 400000000000000000:7fffffffffffffffff -n 1024
 
-crypto_hunter -m bsgs -t 24 -f tests/135.txt -k 4096 -6 -S -e 4000000000000000000000000000000000:7fffffffffffffffffffffffffffffffff   - windows
+crypto_hunter -m bsgs -t 24 -f tests/135.txt -k 4096 -6 -S -e 4000000000000000000000000000000000:7fffffffffffffffffffffffffffffffff
 
-./crypto_hunter -m bsgs -t 24 -f tests/135.txt -k 4096 -6 -S -e 4000000000000000000000000000000000:7fffffffffffffffffffffffffffffffff  - linux
+linux
+
+./crypto_hunter -m address -f tests/71.txt -t 24 -l compress -6 -S -e -r 400000000000000000:7fffffffffffffffff -n 1024
+
+./crypto_hunter -m bsgs -t 24 -f tests/135.txt -k 4096 -6 -S -e 4000000000000000000000000000000000:7fffffffffffffffffffffffffffffffff
 
 Quais valores usar de acordo com minha RAM atual no modo bsgs:
+
 2 G -k 128
 
 4 G -k 256
