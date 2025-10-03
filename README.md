@@ -5,7 +5,7 @@ Ferramenta para busca de chaves e endereços Bitcoin por força bruta utilizando
 
 ---
 
-## 📦 Windows – Exemplos de uso
+## 📦 Windows/🐧 Linux – Exemplos de uso
 
 ```bash
 crypto_hunter -h
